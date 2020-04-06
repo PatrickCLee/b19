@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 public class P2 extends Fragment {
     private View mainView;
-    private ViewFlipper flipper;    //見xml中的ViewFlipper
+    private ViewFlipper flipper,flipper2;    //見xml中的ViewFlipper
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +28,14 @@ public class P2 extends Fragment {
             f1.setOnClickListener(myFlipperListener);
             f2.setOnClickListener(myFlipperListener);
             f3.setOnClickListener(myFlipperListener);
+
+            flipper2 = mainView.findViewById(R.id.viewFlipper2);
+            View ff0 = flipper2.getChildAt(0);
+            View ff1 = flipper2.getChildAt(1);
+            View ff2 = flipper2.getChildAt(2);
+            ff0.setOnClickListener(myFlipperListener);
+            ff1.setOnClickListener(myFlipperListener);
+            ff2.setOnClickListener(myFlipperListener);
         }
         return mainView;
     }
@@ -36,6 +44,7 @@ public class P2 extends Fragment {
         @Override
         public void onClick(View v) {
             flipper.showNext();
+            flipper2.showNext();
         }
     }
 
